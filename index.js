@@ -2,7 +2,6 @@
  * BeaverBot-v2!
  */
 
-
 /**
  * Define a function for initiating a conversation on installation
  * With custom integrations, we don't have a way to find out who installed us, so we can't message them :(
@@ -79,22 +78,21 @@ controller.on('rtm_close', function (bot) {
 /**
  * Core bot logic goes here!
  */
-// BEGIN EDITING HERE!
 
 controller.on('bot_channel_join', function (bot, message) {
     bot.reply(message, "Hello! I am BeaverBot and I am here to have fun and watch you guys progress in FRC!")
 });
 
-controller.hears(['hello', 'hi', 'heya', 'yo', 'hey', 'howdy', 'greetings'], ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
-    bot.reply(message, 'Hello!');
+controller.hears(['hello', 'hi', 'heya', 'yo', 'hey', 'howdy', 'greetings'], ['direct_message', 'direct_mention', 'mention'], async(bot, message) => {
+    await bot.reply(message, 'Hello!');
 });
 
 
 /**
  * Any un-handled direct mention gets a reaction and a pat response!
  */
-controller.on('direct_message,mention,direct_mention', function (bot, message) {
-    bot.api.reactions.add({
+controller.on('direct_message,mention,direct_mention', async(bot, message) => {
+    await bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
         name: '2609',
@@ -104,4 +102,21 @@ controller.on('direct_message,mention,direct_mention', function (bot, message) {
         }
         bot.reply(message, 'I heard you loud and clear boss, but this doesnt seem to be a command I know how to respond to.');
     });
+});
+
+// wait for a new user to join a channel, then say hi
+controller.on('channel_join', async(bot, message) => {
+    await bot.reply(message,'Welcome to the channel!');
+});
+
+// Log every message received
+controller.middleware.receive.use(function(bot, message, next) {
+    // log it
+    console.log('RECEIVED: ', message);
+
+    // modify the message
+    message.logged = true;
+
+    // continue processing the message
+    next();
 });
