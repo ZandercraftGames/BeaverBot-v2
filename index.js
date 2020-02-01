@@ -112,7 +112,7 @@ controller.on('channel_join', async(bot, message) => {
 // Log every message received
 controller.middleware.receive.use(function(bot, message, next) {
     if (message.user !== bot.user){    
-    console.log('RECEIVED: ', message);
+    console.log('Log: Received: ', message);
         // modify the message
         message.logged = true;
         // continue processing the message
