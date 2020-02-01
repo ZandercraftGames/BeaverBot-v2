@@ -1,7 +1,7 @@
 {
-  "name": "easy-peasy-bot",
+  "name": "BeaverBot-v2",
   "version": "1.0.0",
-  "description": "The awesomest bot evar.",
+  "description": "A Bot for the Beaverworx Slack Workspace.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DEGoodmanWilson/easy-peasy-bot-app.git"
+    "url": "git+https://github.com/ZandercraftGames/BeaverBot-v2.git"
   },
   "keywords": [
     "slack",
     "bot"
   ],
-  "author": "D.E. Goodman-Wilson",
+  "author": "Zander Maitland",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DEGoodmanWilson/easy-peasy-bot-app/issues"
+    "url": "https://github.com/ZandercraftGames/BeaverBot-v2/issues"
   },
-  "homepage": "https://github.com/DEGoodmanWilson/easy-peasy-bot-app#readme",
+  "homepage": "https://github.com/ZandercraftGames/BeaverBot-v2#readme",
   "engines": {
     "node": "5.1.1"
   },
