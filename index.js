@@ -85,7 +85,7 @@ controller.on('bot_channel_join', function (bot, message) {
     bot.reply(message, "Hello! I am BeaverBot and I am here to have fun and watch you guys progress in FRC!")
 });
 
-controller.hears('hello', 'direct_message', function (bot, message) {
+controller.hears(['hello', 'hi', 'heya', 'yo', 'hey', 'howdy', 'greetings'], ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
     bot.reply(message, 'Hello!');
 });
 
@@ -97,11 +97,11 @@ controller.on('direct_message,mention,direct_mention', function (bot, message) {
     bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
-        name: 'robot_face',
+        name: '2609',
     }, function (err) {
         if (err) {
             console.log(err)
         }
-        bot.reply(message, 'I heard you loud and clear boss.');
+        bot.reply(message, 'I heard you loud and clear boss, but this doesnt seem to be a command I know how to respond to.');
     });
 });
