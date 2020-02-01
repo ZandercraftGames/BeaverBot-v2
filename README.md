@@ -58,3 +58,5 @@ Once you’ve got your bot developed to your liking, it is ready to be deployed 
 # Using Botkit for Bot Apps
 
 You can find full instructions for building a bot app with this repository at https://medium.com/slack-developer-blog/easy-peasy-bots-getting-started-96b65e6049bf#.4ay2fjf32
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
