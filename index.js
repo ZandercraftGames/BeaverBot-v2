@@ -19,6 +19,7 @@ function onInstallation (bot, installer) {
       } else {
         convo.say('Hello! I am BeaverBot and I have just joined your team!')
         convo.say('You must now /invite me to a channel so that I can be of use.')
+        console.log('WARNING: DEPRECATION: Sending a message to the user who installed the bot is deprecated and may be removed in future versions!')
       }
     })
   }
