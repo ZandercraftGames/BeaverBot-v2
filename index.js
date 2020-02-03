@@ -7,9 +7,6 @@ require('dotenv').config()
 
 /**
  * DEPRECATED!!!
- * Reason For Deprecation:
- * Functionality to run as an app has been temporarily removed to satisfy StandardJS. Can only run as a custom integration.
- * Original Purpose:
  * Define a function for initiating a conversation on installation
  * With custom integrations, we don't have a way to find out who installed us, so we can't message them :(
  */
@@ -22,7 +19,6 @@ function onInstallation (bot, installer) {
       } else {
         convo.say('Hello! I am BeaverBot and I have just joined your team!')
         convo.say('You must now /invite me to a channel so that I can be of use.')
-        console.log('WARNING: DEPRECATION: Sending a message to the user who installed the bot is deprecated and may be removed in future versions!')
       }
     })
   }
@@ -61,7 +57,6 @@ if (process.env.TOKEN || process.env.SLACK_TOKEN) {
   console.log('Error: If this is a custom integration, please specify TOKEN in the environment. If this is an app, please specify CLIENTID, CLIENTSECRET, and PORT in the environment')
   process.exit(1)
 }
-
 
 /**
  * A demonstration for how to handle websocket events. In this case, just log when we have and have not

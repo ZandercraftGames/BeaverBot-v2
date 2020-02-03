@@ -33,3 +33,6 @@ TOKEN
 
 # Environment Variables Configuration File
 .env
+
+# Flatfile Database Storage
+*db_*
