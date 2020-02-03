@@ -3,6 +3,10 @@
  */
 
 /**
+ * DEPRECATED!!!
+ * Reason For Deprecation:
+ * Functionality to run as an app has been temporarily removed to satisfy StandardJS. Can only run as a custom integration.
+ * Original Purpose:
  * Define a function for initiating a conversation on installation
  * With custom integrations, we don't have a way to find out who installed us, so we can't message them :(
  */
