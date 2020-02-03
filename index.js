@@ -2,6 +2,9 @@
  * BeaverBot-v2!
  */
 
+// Import dependancies
+require('dotenv').config()
+
 /**
  * DEPRECATED!!!
  * Reason For Deprecation:

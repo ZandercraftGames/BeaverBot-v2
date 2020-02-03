@@ -30,3 +30,6 @@ node_modules
 
 # Token storage file
 TOKEN
+
+# Environment Variables Configuration File
+.env

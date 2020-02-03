@@ -27,7 +27,8 @@
   "dependencies": {
     "botkit": "0.2.2",
     "botkit-storage-mongo": "^1.0.2",
-    "mongodb": "^1.4.39"
+    "mongodb": "^1.4.39",
+    "dotenv": "8.2.0"
   },
   "devDependencies": {
     "standard": "^14.3.1"
