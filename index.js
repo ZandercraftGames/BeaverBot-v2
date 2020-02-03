@@ -83,8 +83,16 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, 'Hello! I am BeaverBot and I am here to have fun and watch you guys progress in FRC!')
 })
 
-controller.hears(['hello', 'hi', 'heya', 'yo', 'hey', 'howdy', 'greetings'], ['direct_message', 'direct_mention', 'mention'], async (bot, message) => {
+controller.hears(['hello', 'heya', 'hey', 'howdy', 'greetings'], ['direct_message', 'direct_mention', 'mention'], async (bot, message) => {
   await bot.reply(message, 'Hello!')
+})
+
+controller.hears('water game', ['direct_message', 'direct_mention', 'mention'], async (bot, message) => {
+  await bot.reply(message,'Nope! Never gonna happen!')
+})
+
+controller.hears('you sure', ['direct_message', 'direct_mention', 'mention'], async (bot, message) => {
+  await bot.reply(message,'Of course I am sure!')
 })
 
 /**
