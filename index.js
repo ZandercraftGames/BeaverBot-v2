@@ -28,7 +28,10 @@ function onInstallation (bot, installer) {
  */
 
 var config = {}
-if (process.env.MONGOLAB_URI) {
+if (process.env.MONGOLAB_URI && process.env.MYSQL_ADDRESS) {
+  console.log('Error: You have set multiple databases in your .env file. Please only set one database at once.')
+  process.exit(1)
+} else if (process.env.MONGOLAB_URI) {
   console.log('info: Using Storage Medium: MongoDB')
   var BotkitStorage = require('botkit-storage-mongo')
   config = {
@@ -44,9 +47,6 @@ if (process.env.MONGOLAB_URI) {
   controller = Botkit.slackbot({
     storage: mysqlStorage
 });
-} else if (process.env.MONGOLAB_URI && process.env.MYSQL_URI) {
-  console.log('Error: You have set multiple databases in your .env file. Please only set one database at once.')
-  process.exit(1)
 } else {
   config = {
     json_file_store: ((process.env.TOKEN) ? './db_slack_bot_ci/' : './db_slack_bot_a/') // use a different name if an app or CI
