@@ -29,10 +29,12 @@ function onInstallation (bot, installer) {
 
 var config = {}
 if (process.env.MONGOLAB_URI) {
+  console.log('info: Using Storage Medium: MongoDB')
   var BotkitStorage = require('botkit-storage-mongo')
   config = {
     storage: BotkitStorage({ mongoUri: process.env.MONGOLAB_URI })
   }
+  console.log('info: Successfully connected to the database')
 } else {
   config = {
     json_file_store: ((process.env.TOKEN) ? './db_slack_bot_ci/' : './db_slack_bot_a/') // use a different name if an app or CI
