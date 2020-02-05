@@ -35,6 +35,9 @@ if (process.env.MONGOLAB_URI) {
     storage: BotkitStorage({ mongoUri: process.env.MONGOLAB_URI })
   }
   console.log('info: Successfully connected to the database')
+} else if (process.env.MYSQL_URI) {
+  console.log('info: Using Storage Medium: MySQL')
+  
 } else {
   config = {
     json_file_store: ((process.env.TOKEN) ? './db_slack_bot_ci/' : './db_slack_bot_a/') // use a different name if an app or CI
