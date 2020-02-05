@@ -27,7 +27,9 @@
   "dependencies": {
     "botkit": "0.2.2",
     "botkit-storage-mongo": "^1.0.2",
+    "botkit-storage-mysql": "1.0.5",
     "mongodb": "^1.4.39",
+    "mysql":"2.18.1",
     "dotenv": "8.2.0",
     "localtunnel": "2.0.0"
   },
